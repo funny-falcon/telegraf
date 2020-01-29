@@ -220,7 +220,7 @@ func (b *burrow) createClient() (*http.Client, error) {
 		return nil, err
 	}
 	
-	var transport http.DefaultTransport
+	var transport http.Transport
 	transport.DialContext = (&net.Dialer{
 		Timeout: b.ResponseTimeout.Duration,
 		DualStack: true,
